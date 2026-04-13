@@ -1,0 +1,30 @@
+# Core
+torch>=2.1.0
+torchaudio>=2.1.0
+numpy>=1.24.0
+scipy>=1.11.0
+
+# SNN
+snntorch>=0.7.0
+
+# Audio / Features
+librosa>=0.10.0
+kymatio>=0.3.0          # wavelet scattering transform
+soundfile>=0.12.0
+
+# ML / Eval
+scikit-learn>=1.3.0
+pandas>=2.0.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Utilities
+tqdm>=4.65.0
+pyyaml>=6.0
+hydra-core>=1.3.0
+
+# Data
+datasets>=2.14.0        # HuggingFace for some datasets
+gdown>=4.7.0            # Google Drive downloads

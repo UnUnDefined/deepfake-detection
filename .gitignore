@@ -1,0 +1,30 @@
+# Data (download separately, see README)
+data/
+results/
+precomputed/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Model weights
+*.pt
+*.pth
+*.ckpt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude
+.claude/
