@@ -147,8 +147,15 @@ Full writeup in `paper/draft.md` (source) and `paper/draft.pdf` (rendered).
 
 ## References
 
+- Andén, J., & Mallat, S. (2014). Deep scattering spectrum. *IEEE Trans. Signal Processing*, 62(16), 4114-4128.
+- Andreux, M., et al. (2020). Kymatio: Scattering transforms in Python. *JMLR*, 21(60), 1-6.
+- Anonymous (2024). SAFE: Spiking neural network-based audio fidelity evaluation. *ICLR 2025 submission* (withdrawn). OpenReview: QWDZE2mYIe.
+- Eshraghian, J. K., et al. (2023). Training spiking neural networks using lessons from deep learning. *Proceedings of the IEEE*, 111(9), 1016-1054.
+- Jung, J.-W., et al. (2022). AASIST: Audio anti-spoofing using integrated spectro-temporal graph attention networks. *Proc. ICASSP*, 6367-6371.
 - Müller, N. M., Czempin, P., Dieckmann, F., Froghyar, A., & Böttinger, K. (2022). Does audio deepfake detection generalize? *Proc. Interspeech*.
-- Jung, J., Heo, H., Tak, H., et al. (2022). AASIST: Audio anti-spoofing using integrated spectro-temporal graph attention networks. *Proc. ICASSP*.
-- Schäfer, K., Neu, M., & Choi, J.-E. (2024). Robust audio deepfake detection: Exploring front-/back-end combinations and data augmentation strategies for the ASVspoof5 challenge. *Proc. ASVspoof Workshop*.
-- Xuan, X., Carbone, D., Pandey, R., Zhang, W., & Kinnunen, T. H. (2026). WST-X series: Wavelet scattering transform for interpretable speech deepfake detection. arXiv:2602.02980.
-- Anonymous (2024). SAFE: Spiking neural network-based audio fidelity evaluation. ICLR 2025 submission (withdrawn). OpenReview: QWDZE2mYIe.
+- Schäfer, K., Neu, M., & Choi, J.-E. (2024). Robust audio deepfake detection. *Proc. ASVspoof Workshop*.
+- Snyder, D., Garcia-Romero, D., Sell, G., Povey, D., & Khudanpur, S. (2018). X-vectors. *Proc. ICASSP*, 5329-5333.
+- Tak, H., et al. (2021). End-to-end anti-spoofing with RawNet2. *Proc. ICASSP*, 6369-6373.
+- Wang, X., et al. (2020). ASVspoof 2019. *Computer Speech & Language*, 64, 101114.
+- Xuan, X., et al. (2026). WST-X series. *arXiv:2602.02980*.
+- Yamagishi, J., et al. (2021). ASVspoof 2021. *Proc. ASVspoof Workshop*.
