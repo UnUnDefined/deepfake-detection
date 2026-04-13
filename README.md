@@ -35,7 +35,7 @@ Parameter counts for AASIST, AASIST-L, and RawGAT-ST are from Jung et al. (2022)
 
 ## What this is and isn't
 
-This is a **course project** (DATASCI 266, UC Berkeley MIDS) written up with more methodological structure than course projects typically receive. It is not a peer-reviewed publication. Specifically:
+This is a **course project** (DATASCI 266, UC Berkeley MIDS), not a peer-reviewed publication. Specifically:
 
 - **All results use a single random seed.** Multi-seed replication is needed to make statistical significance claims about the interaction effects.
 - **The SNN topology, LIF dynamics, augmentation strategy, and training configuration were chosen from first-principles reasoning**, not empirical search. The 25.65% ITW EER should be interpreted as a lower bound on what this architecture family achieves, not a tuned result.
