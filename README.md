@@ -12,7 +12,7 @@ The study was designed around three structural predictions, made before running 
 2. **Wavelet scattering is the right temporally-preserving frontend for this task**, because wavelet decompositions capture transient artifacts that spectral averaging smears, the same property that makes them useful for industrial vibration analysis, where synthesis-artifact-like transients are the signal of interest.
 3. **Kaldi-style augmentation is the activating condition**, because cross-domain generalization requires corrupting dataset-specific shortcuts before the wavelet features can be selected for.
 
-The 2x2 exploratory design (frontend × backend, with and without augmentation) was designed to test these predictions. All three landed:
+The exploratory design (frontend × backend, with and without augmentation) was designed to test these predictions. All three landed:
 
 - Wavelet scattering yields a **24pp** improvement over mel with the SNN backend, vs. **17pp** with the ResNet backend, the asymmetric interaction predicted by (1).
 - Wavelet+SNN achieves a **2.9x smaller generalization gap** (ASVspoof eval to ITW) than mel+SNN at matched training conditions, consistent with (2).
