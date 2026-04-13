@@ -9,13 +9,13 @@ An exploratory study of wavelet scattering transforms paired with spiking neural
 The study was designed around three structural predictions, made before running the experiments:
 
 1. **SNN backends should benefit from temporally-preserving frontends more than CNN backends do**, because SNN dynamics are natively temporal and spectrograms discard the fine temporal structure that SNNs are built to exploit.
-2. **Wavelet scattering is the right temporally-preserving frontend for this task**, because wavelet decompositions capture transient artifacts that spectral averaging smears — the same property that makes them useful for industrial vibration analysis, where synthesis-artifact-like transients are the signal of interest.
+2. **Wavelet scattering is the right temporally-preserving frontend for this task**, because wavelet decompositions capture transient artifacts that spectral averaging smears, the same property that makes them useful for industrial vibration analysis, where synthesis-artifact-like transients are the signal of interest.
 3. **Kaldi-style augmentation is the activating condition**, because cross-domain generalization requires corrupting dataset-specific shortcuts before the wavelet features can be selected for.
 
 The 2x2 exploratory design (frontend × backend, with and without augmentation) was designed to test these predictions. All three landed:
 
-- Wavelet scattering yields a **24pp** improvement over mel with the SNN backend, vs. **17pp** with the ResNet backend — the asymmetric interaction predicted by (1).
-- Wavelet+SNN achieves a **2.9x smaller generalization gap** (ASVspoof eval → ITW) than mel+SNN at matched training conditions, consistent with (2).
+- Wavelet scattering yields a **24pp** improvement over mel with the SNN backend, vs. **17pp** with the ResNet backend, the asymmetric interaction predicted by (1).
+- Wavelet+SNN achieves a **2.9x smaller generalization gap** (ASVspoof eval to ITW) than mel+SNN at matched training conditions, consistent with (2).
 - Without Kaldi augmentation, all SNN frontends collapse to ~51% ITW EER (chance); with it, wavelet improves by 21-26pp while mel *worsens*, consistent with (3).
 
 This is the first SNN evaluation on the In-the-Wild benchmark. The only prior SNN work in audio deepfake detection (SAFE, withdrawn from ICLR 2025) used spectrograms and was not evaluated on cross-domain real-world audio.
@@ -31,7 +31,7 @@ This is the first SNN evaluation on the In-the-Wild benchmark. The only prior SN
 | AASIST-L + aug | 85K | 26.86% | Schäfer et al. (2024) |
 | RawNet2, no aug | 17.6M | 33.94% | Müller et al. (2022) |
 
-Parameter counts for AASIST, AASIST-L, and RawGAT-ST are from Jung et al. (2022). Schäfer et al. numbers are from their preparatory tests (Table 1), trained on ASVspoof 2019 LA with Gaussian noise + MP3 compression augmentation. The WavLM-Large reference is a frozen linear probe over layer-weighted hidden states, not a fine-tuned system — fine-tuned SSL approaches currently reach substantially lower ITW EER (<10%) and are the state of the art; the comparison here is between non-SSL architectures in the 85K-437K parameter class.
+Parameter counts for AASIST, AASIST-L, and RawGAT-ST are from Jung et al. (2022). Schäfer et al. numbers are from their preparatory tests (Table 1), trained on ASVspoof 2019 LA with Gaussian noise + MP3 compression augmentation. The WavLM-Large reference is a frozen linear probe over layer-weighted hidden states, not a fine-tuned system; fine-tuned SSL approaches currently reach substantially lower ITW EER (<10%) and are the state of the art; the comparison here is between non-SSL architectures in the 85K-437K parameter class.
 
 ## What this is and isn't
 

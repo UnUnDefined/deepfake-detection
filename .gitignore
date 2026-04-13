@@ -1,5 +1,8 @@
-# Data (download separately, see README)
-data/
+# Data (download separately, see data/README.md)
+data/raw/*
+data/processed/
+!data/README.md
+!data/raw/.gitkeep
 results/
 precomputed/
 
