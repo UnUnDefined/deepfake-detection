@@ -45,11 +45,11 @@ We present the first SNN evaluation on the In-the-Wild benchmark, using a 2x2 de
 
 **Mel spectrogram (baseline):** 80 mel bands, 1024-point FFT, 256-sample hop, log compression. Output: (1, 80, 250).
 
-**Wavelet scattering (proposed):** Kymatio Scattering1D with J=5 (averaging scale), Q=10 (wavelets per octave). No temporal averaging (T=0), per-coefficient time alignment via interpolation, log compression, per-channel normalization from training statistics. We evaluate two order configurations: **order-2** (max_order=2, 100 coefficients) includes second-order scattering paths that capture amplitude modulation dynamics; **order-1** (max_order=1, ~55 coefficients) uses only first-order paths. Configuration informed by Xuan et al. (2026), who showed that small J preserves transient synthesis artifacts and high Q provides fine spectral resolution for vocoder artifact detection.
+**Wavelet scattering (proposed):** Kymatio (Andreux et al., 2020) Scattering1D with J=5 (averaging scale), Q=10 (wavelets per octave). No temporal averaging (T=0), per-coefficient time alignment via interpolation, log compression, per-channel normalization from training statistics. We evaluate two order configurations: **order-2** (max_order=2, 100 coefficients) includes second-order scattering paths that capture amplitude modulation dynamics; **order-1** (max_order=1, ~55 coefficients) uses only first-order paths. Configuration informed by Xuan et al. (2026), who showed that small J preserves transient synthesis artifacts and high Q provides fine spectral resolution for vocoder artifact detection.
 
 ### 3.3 SNN Architecture
 
-Both frontends feed a shared SNN architecture (136K parameters) consisting of a Conv2d encoder with frequency-axis mean pooling, three Leaky Integrate-and-Fire (LIF) layers with learnable thresholds and membrane dynamics, and a membrane potential readout. Full architectural details are in Appendix A.
+Both frontends feed a shared SNN architecture (136K parameters) consisting of a Conv2d encoder with frequency-axis mean pooling, three Leaky Integrate-and-Fire (LIF) layers implemented via snnTorch (Eshraghian et al., 2023) with learnable thresholds and membrane dynamics, and a membrane potential readout. Full architectural details are in Appendix A.
 
 ### 3.4 Data Augmentation
 
@@ -124,7 +124,11 @@ We present the first SNN evaluation on the In-the-Wild audio deepfake benchmark,
 
 Andén, J., & Mallat, S. (2014). Deep scattering spectrum. *IEEE Transactions on Signal Processing*, 62(16), 4114-4128.
 
+Andreux, M., Angles, T., Exarchakis, G., Leonarduzzi, R., Rochette, G., Thiry, L., Zarka, J., Mallat, S., Andén, J., Belilovsky, E., Bruna, J., Lostanlen, V., Chaudhary, M., Hirn, M. J., Oyallon, E., Zhang, S., Cella, C., & Eickenberg, M. (2020). Kymatio: Scattering transforms in Python. *Journal of Machine Learning Research*, 21(60), 1-6.
+
 Anonymous. (2024). SAFE: Spiking neural network-based audio fidelity evaluation. *ICLR 2025 submission* (withdrawn Nov 2024). OpenReview ID: QWDZE2mYIe.
+
+Eshraghian, J. K., Ward, M., Neftci, E. O., Wang, X., Lenz, G., Dwivedi, G., Bennamoun, M., Jeong, D. S., & Lu, W. D. (2023). Training spiking neural networks using lessons from deep learning. *Proceedings of the IEEE*, 111(9), 1016-1054.
 
 Jung, J.-W., Heo, H.-S., Tak, H., Shim, H.-J., Chung, J. S., Lee, B.-J., Yu, H.-J., & Evans, N. (2022). AASIST: Audio anti-spoofing using integrated spectro-temporal graph attention networks. *Proc. ICASSP*, 6367-6371.
 
